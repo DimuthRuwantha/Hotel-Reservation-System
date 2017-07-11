@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HotelReservationSystem.Models.Room>
+@{
+    ViewBag.Title = "Authentication";
+}
+<div class="container">
+    @*<div>@ViewBag.MovieType</div>*@
+    <table>
+        <thead>
+            <tr>
+                <th>Room no</th>
+                <th>Class</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.RoomNo</td>
+                    <td>@item.ClassType</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

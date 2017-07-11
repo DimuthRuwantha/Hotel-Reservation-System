@@ -1,0 +1,46 @@
+﻿@*@model HotelReservationSystem.Models.Room*@
+@model IEnumerable<HotelReservationSystem.Models.Room>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<div class="container">
+    @*<div>@ViewBag.MovieType</div>*@
+    <h3>Room Details</h3>
+    <table class="responsive-table highlight">
+        <thead>
+            <tr>
+                <th>Room no</th>
+                <th>Class</th>
+                <th>No of Guests</th>
+                <th>Reserved</th>
+                <th>Reserved From</th>
+                <th>Reserved To</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.RoomNo</td>
+                    <td>@item.ClassType</td>
+                    <td>@item.No_of_Guests</td>
+                    <td>@item.Reserved</td>
+                    <td>@item.ReservedFrom</td>
+                    <td>@item.ReservedTo</td>
+                    <td>
+                        @Html.ActionLink("Edit", "RoomEdit", new { id = item.ID }) |
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ID }) |*@
+                        @Html.ActionLink("Delete", "RoomDelete", new { id = item.ID })
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.ActionLink("Add rooms", "RoomCreate")
+</div>

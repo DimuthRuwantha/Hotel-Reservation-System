@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HotelReservationSystem.Controllers.AdminController" Collapsed="true">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HotelReservationSystem.Controllers.HomeController" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAEAAAAAAAAAAAQACAAAAAEQAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HotelReservationSystem.Controllers.UserController" Collapsed="true">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HotelReservationSystem.DAL.HotelContext" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\HotelContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HotelReservationSystem.DAL.MyDbInitializer" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\MyDbInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HotelReservationSystem.Helpers.Encryption" Collapsed="true">
+    <Position X="4.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\Encryption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HotelReservationSystem.Migrations.InitialCreate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201608130255528_InitialCreate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HotelReservationSystem.Migrations.HotelContext" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201608140645110_HotelContext.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HotelReservationSystem.Models.Rooms" Collapsed="true">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAhAgAAAAAAEAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Rooms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HotelReservationSystem.Models.User" Collapsed="true">
+    <Position X="8" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAAQAAgAgAAAAAAAACAAAAAAgAIAg=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.Mvc.Controller" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Data.Entity.DbContext" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.Entity.Migrations.DbMigration" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.Entity.CreateDatabaseIfNotExists&lt;TContext&gt;" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HotelReservationSystem.Controllers.MainController" Collapsed="true">
+    <Position X="8" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAQAAAAAAAAAAIAAABAAAAIAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\MainController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

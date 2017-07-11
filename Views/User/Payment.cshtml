@@ -1,0 +1,89 @@
+﻿@*@model HotelReservationSystem.Models.RoomFacility*@
+
+@model HotelReservationSystem.Models.Room
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="container">
+    @using (Html.BeginForm("Payment", "User"))
+    {
+        @Html.AntiForgeryToken()
+     //   string userid = Session["User_ID"].ToString();
+
+        <h3>Payment type</h3>
+        <h6>Total cost for the reservation Rs.@ViewBag.Price</h6>
+        <hr />
+        <div class="row">
+            @Html.ValidationSummary(true, "", new { @class = "teal" })
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.RoomNo, htmlAttributes: new { @class = "col s3" })*@
+                <p class="col s6">Card No</p>
+                <div class="col s6">
+                   @Html.EditorFor(model => model.View, new { htmlAttributes = new { @class = "form-control" } })
+                     @Html.ValidationMessageFor(model => model.ClassType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.ClassType, htmlAttributes: new { @class = "control-label col s3" })*@
+                <p class="col s6">CVV</p>
+                <div class="col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    @Html.EditorFor(model => model.View, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.View, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.No_of_Guests, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <p class="col s6">Name as on the card</p>
+                <div class="col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    @*@Html.EditorFor(model => model.Tv, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Tv, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.No_of_Guests, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <p class="col s6">Card Type</p>
+                <div class="col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    @*@Html.EditorFor(model => model.Wifi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Wifi, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.No_of_Guests, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <p class="col s6">Expire on</p>
+                <div class="col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    @*@Html.EditorFor(model => model.No_of_Guests, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.No_of_Guests, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.Reserved, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <p class="col s6">Price per person</p>
+                <div class="col s6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+                    @*@Html.EditorFor(model => model.PricePerPerson, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PricePerPerson, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4">
+                <input type="submit" value="Pay" class="btn btn-default" />
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "ClassDetails")
+        </div>
+    }
+</div>
+
+

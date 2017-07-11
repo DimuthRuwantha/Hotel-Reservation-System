@@ -1,0 +1,256 @@
+﻿
+ @model HotelReservationSystem.Models.CommanClass
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    /*body{
+        background-image:url(/Content/img/reservation.jpg)
+    }*/
+</style>
+<script>
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+        $('select').material_select();
+        Materialize.updateTextFields();
+        $('.modal').modal();
+        $('#modal1').modal('open');
+        $('#modal1').modal('close');
+    });
+</script>
+<img style="z-index:-1;position:absolute; width:100%" src="~/Content/img/reservation.jpg" />
+
+<div class="container">
+
+    @using (Html.BeginForm("RoomsReservations", "User"))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card dark-gray" style="padding:5px;opacity:0.9">
+            <h4 class="center-align">Accomodations.</h4>
+           
+             <h6>@ViewBag.Message</h6>
+
+            <div class="row">
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-title text-center"></div>
+                        <div class="card-content" style="background-color:blueviolet">
+                            <ul class="collapsible z-depth-3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header" style="background-color:lightgray">
+                                        <p style="text-align:center">Presidential Floor</p>
+                                    </div>
+                                    <div class="collapsible-body purple white-text">
+
+                                        <p>A Floor fit for Royalty that spells luxury the moment you walk in.</p>
+                                        <ul style="padding-left:10px">
+                                            <li>- Presidential Suite</li>
+                                            <li>- Diplomatic Suite</li>
+                                            <li>- Royal Suite</li>
+                                            <li>- Presidential Floor Room</li>
+                                        </ul>
+                                        @*<a class="waves-effect waves-teal btn-flat" style="color:white">Hall</a>*@
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-title text-center"></div>
+                        <div class="card-content" style="background-color:blueviolet">
+                            <ul class="collapsible z-depth-3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header" style="background-color:lightgray">
+                                        <p style="text-align:center">Executive Floor</p>
+                                    </div>
+                                    <div class="collapsible-body purple white-text">
+                                        <p>The ideal accommodation for the discerning business traveller, including the luxury of entertaining your colleagues...</p>
+                                        <ul style="padding-left:10px">
+                                            <li>- Executive Floor Presidential Suite</li>
+                                            <li>- Executive Suite</li>
+                                            <li>- Executive Floor Room</li>
+
+                                        </ul>
+
+
+
+                                        <a class="waves-effect waves-teal btn-flat" style="color:white">Hall</a>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-title text-center"></div>
+                        <div class="card-content" style="background-color:blueviolet">
+                            <ul class="collapsible z-depth-3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header" style="background-color:lightgray">
+                                        <p style="text-align:center">Superior Floor</p>
+                                    </div>
+                                    <div class="collapsible-body purple white-text">
+                                        <p>These deluxe guest rooms offer VIP amenities for our distinguished traveller.</p>
+                                        <ul style="padding-left:10px">
+                                            <li>- Superior Suite</li>
+                                            <li>- Superior Room</li>
+                                        </ul>
+
+
+                                        @*<a class="waves-effect waves-teal btn-flat" style="color:white">Hall</a>*@
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr />
+
+            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ClassID)*@
+
+            <div class="row">
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.ClassType, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">ClassType</p>
+                    <div class="col s6">
+                        @{
+                            List<SelectListItem> listitems = new List<SelectListItem>();
+                            listitems.Add(new SelectListItem
+                            {
+                                Text = "Presidential",
+                                Value = "Presidential"
+                            });
+                            listitems.Add(new SelectListItem
+                            {
+                                Text = "Executive",
+                                Value = "Executive"
+                            });
+                            listitems.Add(new SelectListItem
+                            {
+                                Text = "Superior",
+                                Value = "Superior"
+                            });
+
+                        }
+                        @Html.DropDownListFor(model => model.room.ClassType,listitems,"Select")
+                        @*@Html.DropDownListFor(model => model.ClassType, listitems, "Select")*@
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    <p class="col s6">View</p>
+                    <div class="col s6">
+                        @{
+                            List<SelectListItem> viewitems = new List<SelectListItem>();
+                            viewitems.Add(new SelectListItem
+                            {
+                                Text = "Sea View",
+                                Value = "Sea View"
+                            });
+                            viewitems.Add(new SelectListItem
+                            {
+                                Text = "Sun Rise",
+                                Value = "Sun Rise"
+                            });
+                            viewitems.Add(new SelectListItem
+                            {
+                                Text = "City View",
+                                Value = "City View"
+                            });
+
+                        }
+                        @Html.DropDownListFor(model => model.roomfacility.View, viewitems, "Select")
+                    </div>
+
+                </div>
+
+                <div class="col s4">
+                    <p class="col s8">From</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.room.ReservedFrom, new { htmlAttributes = new { @type = "date", @class = "validate" } })
+                    </div>
+                </div>
+               
+                 @*<span>From</span>
+                @Html.ValidationMessageFor(model => model.room.ReservedFrom, "", new { @class = "red-text" })
+                <input type="date" class="datepicker">*@
+                <div class="col s4">
+                    <p class="col s6">To</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.room.ReservedTo, new { htmlAttributes = new { @type = "date", @class = "validate" } })
+                    </div>                   
+                </div>
+               
+
+
+
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.Tv, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">No of Guests per Room</p>
+                    <div class="col s6">
+                        @{
+                            List<SelectListItem> guests = new List<SelectListItem>();
+                            guests.Add(new SelectListItem
+                            {
+                                Text = "1",
+                                Value = "1"
+                            });
+                            guests.Add(new SelectListItem
+                            {
+                                Text = "2",
+                                Value = "2"
+                            });
+                            guests.Add(new SelectListItem
+                            {
+                                Text = "3",
+                                Value = "3"
+                            });
+
+                        }
+                        @Html.DropDownListFor(model => model.room.No_of_Guests, guests, "Select")
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <input data-target="model1" type="submit" value="Reserve" class="btn btn-default" />
+                </div>
+            </div>
+
+            <div class="row">
+                @if (ViewBag.Message != null)
+                {
+                    <p class="white-text">@ViewBag.Message</p>
+                }
+            </div>
+
+            <div>
+                @Html.ActionLink("Back to Home", "User")
+            </div>
+
+
+        </div>
+       }
+
+
+</div>

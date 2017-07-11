@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Hotel Reservetion System</title>
+
+    <link href="~/Content/Site.css" rel="stylesheet">
+    <link href="~/Content/css/materialize.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript"
+            src="~/Content/jquery/jquery-2.1.1.min.js"></script>
+    <script src="~/Content/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            // Initialize collapse button
+            $(".button-collapse").sideNav();
+            // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+            //$('.collapsible').collapsible();
+        });
+    </script>
+</head>
+<body style="background-color:lightgray">   
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <!-- logo -->
+                <div class="nav-wrapper purple">
+                    <row class="col s8">
+                        <img style="height:100%" class="responsive-img" src="~/Content/img/implogo.jpg" />
+                    </row>
+                    @*<a href="#!"><div><img style="height:100%" class="responsive-img" src="~/Content/img/implogo.jpg" /></div></a>*@
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li class=@(ViewContext.RouteData.Values["Action"].ToString()=="Signup" ? "active" : "")>@Html.ActionLink("Signup", "Signup", "Home")</li>
+                        <li class=@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")>@Html.ActionLink("Login", "Login", "Home")</li>
+                        <li class=@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")>@Html.ActionLink("Home", "Index", "Home")</li>
+                    </ul>
+                   
+                </div>
+            </nav>
+        </div>
+        <div class="nav-wrapper purple">
+           
+            <ul id="mobile-demo" class="side-nav purple">
+                <li class=@(ViewContext.RouteData.Values["Action"].ToString()=="Signup" ? "active" : "")>@Html.ActionLink("Signup", "Signup", "Home", new { @class = "white-text" })</li>
+                <li class=@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active" : "")>@Html.ActionLink("Login", "Login", "Home", new { @class = "white-text" })</li>
+                <li class=@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")>@Html.ActionLink("Home", "Index", "Home", new { @class = "white-text" })</li>
+            </ul>
+
+        </div>
+    </header>
+
+
+        @*<div class="container body-content">*@
+        @RenderBody()
+        <hr />
+    @*<div class="fixed-action-btn vertical click-to-toggle" style="bottom: 45px; right: 24px;">*@
+    <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="material-icons"><img class="responsive-img z-depth-3" src="~/Content/img/Like.png"></i>
+        </a>
+        <ul>
+            @*<li><a class="btn-floating red"><i class="material-icons z-depth-3">i</i></a></li>*@
+            <li><a class="btn-floating blue" href="https://plus.google.com/112371735514222303998"><i class="material-icons z-depth-3"><img class="responsive-img" src="~/Content/img/google.png"></i></a></li>
+            <li><a class="btn-floating blue" href="https://www.facebook.com/druwantha"><i class="material-icons"><img class="responsive-img" src="~/Content/img/facebook.png"></i></a></li>
+            <li><a class="btn-floating blue" href="https://twitter.com/DimuthRuwantha1"><i class="material-icons"><img class="responsive-img" src="~/Content/img/Twitter.png"></i></a></li>
+            <li><a class="btn-floating blue" href="https://www.linkedin.com/in/dimuth-ruwantha-8ba124108"><i class="material-icons"><img class="responsive-img" src="~/Content/img/linkedin.png"></i></a></li>
+
+        </ul>
+    </div>
+
+    @*<div  class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large blue" value="M">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>*@
+
+
+    <footer class="page-footer purple">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Corporate Address</h5>
+                    <p class="grey-text text-lighten-4">Imperial Hotels and Resorts,</br>New Galle Road,</br>Colombo 2.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Media</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Site Map</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <marquee>© 2016 Imperial Hotel by triple8</marquee>
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+        @*</div>*@
+    
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>*@
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+</body>
+</html>

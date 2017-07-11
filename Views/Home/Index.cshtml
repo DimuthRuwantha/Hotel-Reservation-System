@@ -1,0 +1,121 @@
+﻿@model HotelReservationSystem.Models.Room
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- <h1>main content</h1>
+<img class="responsive-img" src="img/Capture4_1.png">
+ -->
+<style>
+    body {
+        background-image: url(/Content/img/hotel.jpg);
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+        $('select').material_select();
+        Materialize.updateTextFields();
+    });
+</script>
+
+<!-- card start -->
+
+<div class="row">
+    <div class="col s12 m9">
+@using (Html.BeginForm("Index", "Main"))
+{
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <p class="card-title">Check Availability</p>
+                <span>From</span>
+                @Html.EditorFor(model => model.ReservedFrom, new { htmlAttributes = new { @type = "date",@class="validate" } })
+                @*@Html.ValidationMessageFor(model => model.ReservedFrom, "", new { @class = "red-text" })*@
+                @*<input type="date" class="datepicker">*@
+                <span>To</span>
+                @Html.EditorFor(model => model.ReservedTo, new { htmlAttributes = new { @type = "date", @class="validate" } })
+                @*@Html.ValidationMessageFor(model => model.ReservedTo, "", new { @class = "red-text" })*@
+                @*<input type="date" class="datepicker">*@
+                @*<div class="row">
+                    <div class="col s8">
+                        <span>No of Guests</span>
+                    </div>
+                    <div class="col s2">
+                        @Html.EditorFor(model => model.ReservedTo, new { htmlAttributes = new { @type = "text", @class = "right-align" } })
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="col s8">
+                        <span>No of guests</span>
+                    </div>
+                    <div class="col s4">
+                        @{
+                            List<SelectListItem> listitems = new List<SelectListItem>();
+                            listitems.Add(new SelectListItem
+                            {
+                                Text = "1",
+                                Value = "1"
+                            });
+                            listitems.Add(new SelectListItem
+                            {
+                                Text = "2",
+                                Value = "2"
+                            });
+                            listitems.Add(new SelectListItem
+                            {
+                                Text = "3",
+                                Value = "3"
+                            });
+                            listitems.Add(new SelectListItem
+                            {
+                                Text = "4",
+                                Value = "4"
+                            });
+                        }
+                        @Html.DropDownListFor(model => model.No_of_Guests, listitems, "0")
+                    </div>
+                    @*<div class="input-field col s4">*@
+                        @*<fieldset>
+                            <select>
+                                <option value="1" class="right-align">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </fieldset>*@
+                    @*</div>*@
+                </div>
+            </div>
+
+            <div class="card-action">
+                <a>
+                    @Html.ActionLink("Gallery", "HomeGallery", "Home")
+                </a>
+                <input type="submit" class="waves-effect waves-light btn" value="Find"/>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                       @*@if(Model!=null)
+                       {
+                          <p>room no: @Model.RoomNo </p>
+                       }*@
+                           
+                       </div>
+                       <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
+                @*<input type="submit" class="btn waves-orange" value="Find" />*@
+                @*<a class="waves-effect waves-light btn">
+                    <i class="material-icons right"></i>Find
+                </a>*@
+            </div>
+        </div>
+}
+    </div>
+</div>
+
+<!--card end -->

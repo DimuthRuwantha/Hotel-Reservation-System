@@ -1,0 +1,74 @@
+﻿@model HotelReservationSystem.Models.RoomFacility
+
+@{
+    ViewBag.Title = "ClassEdit";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="container">
+    <h4 class="red-text">Are you sure you want to delete this?</h4>
+    <div>
+        <h5>RoomFacility</h5>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="blue-text">
+                @Html.DisplayNameFor(model => model.ClassType)
+            </dt>
+
+            <dd class="red-text">
+                @Html.DisplayFor(model => model.ClassType)
+            </dd>
+
+            <dt class="blue-text">
+                @Html.DisplayNameFor(model => model.View)
+            </dt>
+
+            <dd class="red-text">
+                @Html.DisplayFor(model => model.View)
+            </dd>
+
+            <dt class="blue-text">
+                @Html.DisplayNameFor(model => model.Tv)
+            </dt>
+
+            <dd class="red-text">
+                @Html.DisplayFor(model => model.Tv)
+            </dd>
+
+            <dt class="blue-text">
+                @Html.DisplayNameFor(model => model.Wifi)
+            </dt>
+
+            <dd class="red-text">
+                @Html.DisplayFor(model => model.Wifi)
+            </dd>
+
+            <dt class="blue-text">
+                @Html.DisplayNameFor(model => model.No_of_Guests)
+            </dt>
+
+            <dd class="red-text">
+                @Html.DisplayFor(model => model.No_of_Guests)
+            </dd>
+
+            <dt class="blue-text">
+                @Html.DisplayNameFor(model => model.PricePerPerson)
+            </dt>
+
+            <dd class="red-text">
+                @Html.DisplayFor(model => model.PricePerPerson)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "ClassDetails")
+            </div>
+        }
+    </div>
+</div>

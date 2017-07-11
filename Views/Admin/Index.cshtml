@@ -1,0 +1,85 @@
+﻿<!-- @model IEnumerable<HotelReservationSystem.Models.Room>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<div class="container">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table highlight">
+        <tr>
+            <th>
+                RoomNo
+            </th>
+            <th>
+                ClassType
+            </th>
+            <th>
+                No_of_Guests
+            </th>
+            <th>
+                Reserved
+            </th>
+            <th>
+                ReservedFrom
+            </th>
+            <th>
+                ReservedTo
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.RoomNo
+                </td>
+                <td>
+                    @item.ClassType
+                </td>
+                <td>
+                    @item.No_of_Guests
+                </td>
+                <td>
+                    @item.Reserved
+                </td>
+                <td>
+                    @item.ReservedFrom
+                </td>
+                <td>
+                    @item.ReservedTo
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.RoomNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No_of_Guests)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reserved)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservedFrom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservedTo)
+                </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+-->

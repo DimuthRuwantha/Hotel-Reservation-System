@@ -1,0 +1,96 @@
+﻿@*@model IEnumerable <HotelReservationSystem.Models.User>*@
+@model HotelReservationSystem.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+<style>
+    body{
+        background-image:url(/Content/img/timeline3.jpg)
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+    </div>
+    <img src="/Content/img/login.png" style="opacity:0.9; width:400px; height:300px; border-radius:7px; border-color:black; margin-left:225px; margin-top:0px;" />
+
+
+    @*<form id="form2" style="margin-left:300px; margin-top:-300px; position:absolute;color:black">*@
+    <div style="margin-left:300px; margin-top:-300px; position:absolute;color:black">
+        @using (Html.BeginForm("Login", "Home"))
+        {
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <p for="first_name">Username</p>
+                </div>
+                <div class="col s8">
+                    @*@Html.TextBox("User_name")*@
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @placeholder = "User Name" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "red-text" })
+                   
+                     @*<input placeholder="Username" name="user_name" type="text"/>*@
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s4">
+                    <p for="first_name">Password</p>
+                </div>
+                <div class="col s8">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @type="password" , @placeholder = "**********" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "red-text" })
+
+
+                    @*@Html.Password("Password")*@
+                    @*<input placeholder="Password" id="password" type="password" class="validate">*@
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <input type="checkbox" id="test5" />
+                    <label for="test5" style="color:black;">Remember Username</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s8">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="col s4">
+                    <input type="submit" class="btn waves-orange" value="Login" />
+                    @*<input type="submit" value="Login"/>*@
+                    @*<input type="submit" class="btn waves-orange" value="Login" onclick="location.href='@Url.Action("Authentication", "Home")'" />*@
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                   @if (ViewBag.Message != null)
+                   {
+                    <p class="white-text">@ViewBag.Message</p>
+                   }
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "white-text" })
+                   @Html.ValidationMessageFor(model => model.Password, "", new { @class = "white-text" })
+ 
+                </div>
+            </div>
+        }
+    </div>   
+    <div class="row">
+    </div>
+</div>
+
+@*</form>*@
+@*@using (Html.BeginForm("Authentication","Home"))
+    {
+        @Html.TextBox("name")
+        <input type="submit"class="btn" value="search" onclick="location.href='@Url.Action("Authentication", "Home")'" />
+    }*@

@@ -1,0 +1,7 @@
+﻿when models are changed
+in package manager console
+	> anable-migrations
+	> add-migration <somename>
+	#then build the project
+	> update-database
+	#run the Configuretion.cs class

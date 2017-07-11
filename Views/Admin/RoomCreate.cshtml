@@ -1,0 +1,79 @@
+﻿@model HotelReservationSystem.Models.Room
+
+
+@*@using HotelReservationSystem.Models;
+@model model<Room, RoomFacility>*@
+@*@model IEnumerable<HotelReservationSystem.Models.Room>*@
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+@*<h2>Create</h2>*@
+
+@using (Html.BeginForm("RoomCreate", "Admin"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container form-horizontal">
+        <h3>Add Rooms</h3>
+        <hr />
+        <div class="row">
+            @Html.ValidationSummary(true, "", new { @class = "teal" })
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.RoomNo, htmlAttributes: new { @class = "col s3" })*@
+                <p class="col s6">Room No</p>
+                <div class="col s6">
+                    @Html.EditorFor(model => model.RoomNo)
+                    @Html.ValidationMessageFor(model => model.RoomNo, "")
+                </div>
+            </div>
+
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.ClassType, htmlAttributes: new { @class = "control-label col s3" })*@
+                <p class="col s6">Class Type</p>
+                <div class="col s6">
+                    @Html.EditorFor(model => model.ClassType)
+                    @Html.ValidationMessageFor(model => model.ClassType, "")
+                </div>
+            </div>
+
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.No_of_Guests, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <p class="col s6">Guests per room</p>
+                <div class="col s6">
+                    @Html.EditorFor(model => model.No_of_Guests)
+                    @Html.ValidationMessageFor(model => model.No_of_Guests, "")
+                </div>
+            </div>
+
+            <div class="col s4">
+                @*@Html.LabelFor(model => model.Reserved, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <p class="col s6">Reserved</p>
+                <div class="col s6">
+                    @Html.EditorFor(model => model.Reserved)
+                    @Html.ValidationMessageFor(model => model.Reserved, "")
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.ReservedTo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ReservedTo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ReservedTo, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+
+        </div>
+        <div class="row">
+            <div class="col s4">
+                <input type="submit" value="Add Room" class="btn btn-default" />
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "RoomDetails")
+        </div>
+    </div>
+}

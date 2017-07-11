@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Hotel Reservetion System</title>
+
+
+    <link href="~/Content/Site.css" rel="stylesheet">
+    <link href="~/Content/css/materialize.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="~/Content/jquery/jquery-2.1.1.min.js"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/Content/js/materialize.min.js")"></script>*@
+    <script src="~/Content/js/materialize.min.js"></script>
+
+
+   
+
+</head>
+<body>
+    <script>
+    $(document).ready(function () {
+        $('.collapsible').collapsible({ accordion: false });
+        // A setting that changes the collapsible behavior to expandable instead of the default accordion style       
+        $('.slider').slider({ full_width: true });
+
+        $('.dropdown-button').dropdown({
+            inDuration: 300,
+            outDuration: 225,
+            constrain_width: false, // Does not change width of dropdown to that of the activator
+            hover: true, // Activate on hover
+            gutter: 0, // Spacing from edge
+            belowOrigin: true, // Displays dropdown below the button
+            alignment: 'right' // Displays dropdown with edge aligned to the left of button
+        }
+  );
+    });
+    </script>
+
+    <header>
+       
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper purple">
+                    <row class="col s8">
+                        <img style="height:100%" class="responsive-img" src="~/Content/img/implogo.jpg" />
+                    </row>
+                    @{
+
+
+                        var ac = new HotelReservationSystem.Controllers.AdminController();
+                        try
+                        {
+                            string usrtype = Session["UserType"].ToString();
+                            if (ac.AdminCheck(usrtype) == true)
+                            {
+                                <ul class="right hide-on-med-and-down">
+                                    <li>@Session["User_name"].ToString()&nbsp;</li>
+
+                                    @*<li>&nbsp;@Session["UserType"].ToString()</li>*@
+                                    <!-- Dropdown Trigger -->
+                                    <li>
+                                        <a class='dropdown-button' href='#' data-activates='dropdown1'>Admin</a>
+                                        <ul id='dropdown1' class='dropdown-content purple'>
+                                            <li>@Html.ActionLink("Class Types", "ClassDetails", "Admin")</li>
+                                            <li>@Html.ActionLink("New Class", "ClassCreate", "Admin")</li>
+                                            <li class="divider"></li>
+                                            <li>@Html.ActionLink("Room Types", "RoomDetails", "Admin")</li>
+                                            <li>@Html.ActionLink("New Room", "RoomCreate", "Admin")</li>
+                                        </ul>
+                                    </li>
+                                    <li class=@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")>@Html.ActionLink("Home", "User", "User")</li>
+                                    <li class=@(ViewContext.RouteData.Values["Action"].ToString() == "Logout" ? "active" : "")>@Html.ActionLink("Logout", "Logout", "User")</li>
+                                </ul>
+                             <!-- Dropdown Structure -->
+
+                            }
+                            else
+                            {
+                                    <ul class="right hide-on-med-and-down">
+                                        <li>@Session["User_name"].ToString()</li>
+                                        <li>&nbsp;@Session["UserType"].ToString()</li>
+                                        <li class=@(ViewContext.RouteData.Values["Action"].ToString() == "Logout" ? "active" : "")>@Html.ActionLink("Logout", "Logout", "User")</li>
+                                    </ul>
+                            }
+                        }
+                        catch (NullReferenceException e)
+                        {
+                            ac.badrequest();
+                        }
+                        //      if (Session["UserType"].ToString() == "Admin")
+
+                    }
+
+                   
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    @*<div class="container body-content">*@
+    @RenderBody()
+    <hr />
+    <div class="fixed-action-btn vertical" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="material-icons"><img class="responsive-img z-depth-3" src="~/Content/img/Like.png"></i>
+        </a>
+        <ul>
+            @*<li><a class="btn-floating red"><i class="material-icons z-depth-3">i</i></a></li>*@
+            <li><a class="btn-floating blue" href="https://plus.google.com/112371735514222303998"><i class="material-icons z-depth-3"><img class="responsive-img" src="~/Content/img/google.png"></i></a></li>
+            <li><a class="btn-floating blue" href="https://www.facebook.com/druwantha"><i class="material-icons"><img class="responsive-img" src="~/Content/img/facebook.png"></i></a></li>
+            <li><a class="btn-floating blue" href="https://twitter.com/DimuthRuwantha1"><i class="material-icons"><img class="responsive-img" src="~/Content/img/Twitter.png"></i></a></li>
+            <li><a class="btn-floating blue" href="https://www.linkedin.com/in/dimuth-ruwantha-8ba124108"><i class="material-icons"><img class="responsive-img" src="~/Content/img/linkedin.png"></i></a></li>
+
+        </ul>
+    </div>
+
+    @*<div  class="fixed-action-btn horizontal click-to-toggle" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large blue" value="M">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+            </ul>
+        </div>*@
+
+
+    <footer class="page-footer purple">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Corporate Address</h5>
+                    <p class="grey-text text-lighten-4">Imperial Hotels and Resorts,</br>New Galle Road,</br>Colombo 2.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Media</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Blog</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Site Map</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <marquee>© 2016 Imperial Hotel by triple8</marquee>
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+    @*</div>*@
+
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>*@
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>

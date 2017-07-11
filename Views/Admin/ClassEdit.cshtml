@@ -1,0 +1,92 @@
+﻿@model HotelReservationSystem.Models.RoomFacility
+
+
+@{
+    ViewBag.Title = "ClassEdit";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+       
+            <h3>Edit RoomFacilities</h3>
+            <hr />
+            @Html.ValidationSummary(true, "")
+            @Html.HiddenFor(model => model.ClassID)
+
+            <div class="row">
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.ClassType, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">ClassType</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.ClassType)
+                        @Html.ValidationMessageFor(model => model.ClassType, "")
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.Hotwater, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">View</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.View)
+                        @Html.ValidationMessageFor(model => model.View, "")
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.Tv, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">Tv</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.Tv)
+                        @Html.ValidationMessageFor(model => model.Tv, "")
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.Wifi, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">Wifi</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.Wifi)
+                        @Html.ValidationMessageFor(model => model.Wifi, "")
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.No_of_Guests, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">No of Guests</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.No_of_Guests)
+                        @Html.ValidationMessageFor(model => model.No_of_Guests, "")
+                    </div>
+                </div>
+
+                <div class="col s4">
+                    @*@Html.LabelFor(model => model.PricePerPerson, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <p class="col s6">PricePerPerson</p>
+                    <div class="col s6">
+                        @Html.EditorFor(model => model.PricePerPerson)
+                        @Html.ValidationMessageFor(model => model.PricePerPerson, "")
+                    </div>
+                </div>              
+            </div>
+            <div class="row">
+                <div class="col s4">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+            <div>
+                @Html.ActionLink("Back to List", "ClassDetails")
+            </div>
+
+
+       
+    }
+</div>
+
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

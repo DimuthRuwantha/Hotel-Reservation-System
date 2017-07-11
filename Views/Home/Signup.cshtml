@@ -1,0 +1,136 @@
+﻿@model HotelReservationSystem.Models.User
+@{
+    ViewBag.Title = "Signup";
+}
+<style>
+
+ 
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        //Materialize.updateTextFields();
+    });
+</script>
+<img class="responsive-img" style="z-index: -1; position:absolute;width:100%" src="~/Content/img/signup.jpg">
+@*<div class="row" style="width:100%;height:100%;">*@
+    @*<div class="col s6">
+        <img class="responsive-img"  style="background-size:cover;" src="~/Content/img/signup.jpg">
+    </div>*@
+    <!-- card start -->
+  <!--<div class="col s6" style="padding:5px; margin-right:5px;"> -->  
+    @*<div class="col s6">*@
+        <div style="padding:5px; margin-right:5px;margin-left:50%;">
+        @using (Html.BeginForm("Signup", "Home"))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+            </div>
+            //First Name And Last Name
+            <div class="row">
+                <div class="col s2">
+                    <p>First Name</p>
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @placeholder = "First Name" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "red-text" })
+                </div>
+                <div class="col s2">
+                    <p>Last Name</p>
+                </div>
+                <div class="input-field col s3">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @placeholder = "Last Name" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "red-text" })
+                </div>
+            </div>
+
+            //E-mail
+            <div class="row">
+                <div class="col s2">
+                    <br />
+                    <p>E-mail</p>
+                </div>
+                <div class="input-field col s5">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "example@host.com", @id = "email",@class="validate",@type="email"} })
+                    <label for="email" data-error="wrong" data-success="right"></label>
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "red-text" })
+                </div>
+               
+            </div>
+
+            //Username
+            <div class="row">
+                <div class="col s2">
+                    <br />
+                    <p>Username</p>
+                </div>
+                <div class="input-field col s4">
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @placeholder = "Username" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "red-text" })
+                </div>
+            </div>
+
+            //Password
+            <div class="row">
+                <div class="col s2">
+                    <br />
+                    <p>Password</p>
+                </div>
+                <div class="input-field col s4">                 
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @id = "password", @type = "password", @class = "validate" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "red-text" })                 
+                </div>
+            </div>
+
+            //Confirm Password
+            <div class="row">
+                <div class="col s2">
+                    <p>Re enter Password</p>
+                </div>
+                <div class="input-field col s4">
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new {@id="password", @type = "password",@class="validate" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "red-text" })
+                    <label for="password"></label>
+                </div>
+            </div>
+
+            //Gender
+            <div class="row">
+                <div class="col s2">
+                    <p for="first_name">Gender</p>
+                </div>
+                <div class="input-field col s4">
+                    @Html.RadioButtonFor(model => model.gender, "Male", new { id = "male" })
+                    @Html.Label("male", "Male")
+                    @Html.RadioButtonFor(model => model.gender, "Female", new { id = "female" })
+                    @Html.Label("female", "Female")
+                    @Html.ValidationMessageFor(model => model.gender, "", new { @class = "red-text" })
+                </div>
+            </div>
+
+            //Date of Birth
+            <div class="row">
+                <div class="col s2">
+                    <p>Date of Birth</p>
+                </div>
+                <div class="input-field col s4">
+                    @Html.EditorFor(model => model.Bday, new { htmlAttributes = new { @type = "date", @class = "datepicker" } })
+                    @Html.ValidationMessageFor(model => model.Bday, "", new { @class = "red-text" })
+                </div>
+            </div>
+
+            //Submit
+            <div>
+                <input type="submit" class="waves-effect waves-light btn" value="Signup" />
+            </div>
+
+            if (ViewBag.Message != null)
+            {
+                <p>@ViewBag.Message</p>
+            }
+
+        }
+    </div>
+    <!--card end -->
+

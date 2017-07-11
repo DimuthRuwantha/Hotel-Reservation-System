@@ -1,0 +1,221 @@
+﻿@{
+    ViewBag.Title = "User";
+}
+@*<h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <p>Use this area to provide.</p>*@
+
+
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+<div>
+    <!--Slideshow-->
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img class="responsive-img" src="~/Content/img/hotel.jpeg" /> <!-- random image -->
+                <div class="caption center-align">
+                    @*<h3>This is our big Tagline!</h3>
+    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline1.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline2.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline3.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline4.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline5.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline6.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline7.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+            <li>
+                <img src="/Content/img/timeline8.jpg" /> <!-- random image -->
+                <div class="caption left-align">
+                    @*<h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>*@
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--reservations dinning and leisure-->
+    <div class="row">
+        <div class="col s4">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card z-depth-4" style="background-color:lightgray;">
+                        <div class="card-image" style="padding:10px;">
+                            <img src="/Content/img/block1.jpg" style="border-radius:10px">
+                            <span class="card-title">Reservetions</span>
+                        </div>
+                        <div class="card-content" style="background-color:blueviolet">
+
+                            <ul class="collapsible z-depth-3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header" style="background-color:lightgray">
+                                        <p style="text-align:center">Reservetions</p>
+                                    </div>
+                                    <div class="collapsible-body white-text purple" style="padding-left:10px">
+
+
+                                        <p>For your satisfaction we happy to offer you three different categories of accomodations.</p>
+                                       <ul>
+                                           <li>- Presidential Floor</li>
+
+                                           <li>- Executive Floor</li>
+
+                                           <li>- Superior Floor</li>
+                                       </ul>
+                                        
+                                       
+
+                                        <a class="waves-effect waves-teal btn-flat" style="color:white">
+                                        @Html.ActionLink("Rooms Reservations","RoomsReservations","User")</a></br>
+                                        @*<a class="waves-effect waves-teal btn-flat" style="color:white">Hall</a>*@
+                                    </div>
+
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="card-action">
+                            <a>@Html.ActionLink("Gallery", "RoomsGallery", "User")</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card z-depth-4" style="background-color:lightgray;">
+                        <div class="card-image" style="padding:10px;">
+                            <img src="/Content/img/block2.jpg" style="border-radius:10px">
+                            <span class="card-title">Dinning</span>
+                        </div>
+                        <div class="card-content" style="background-color:blueviolet">
+
+                            <ul class="collapsible z-depth-3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header" style="background-color:lightgray">
+                                        <p style="text-align:center">Dinning</p>
+                                    </div>
+                                    <div class="collapsible-body purple white-text">
+                                        <p>The divine smell hits you first and yummy!!.. You can even walk in to it with your Eyes Closed.</p>
+                                        <ul class="white-text" style="padding-left:10px;">
+                                            <li>- A la Carte menu</li>
+                                            <li>- Private Dining Room and Pre Dinner Cocktail Area</li>
+                                            <li>- Garden Area for Private or Family Dining</li>
+                                            <li>- Wide range of Delicious Pastries, Sandwiches, Cakes etc...</li>
+                                            <li>- Handmade Chocolates, Sweets, Fresh Juices...</li>
+                                          
+                                         </ul>
+                                        
+                                        @*<a class="waves-effect waves-teal btn-flat" style="color:white">Rooms</a></br>
+                                        <a class="waves-effect waves-teal btn-flat" style="color:white">Hall</a>*@
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <a>@Html.ActionLink("Gallery", "DinningGallery", "User")</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s4">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card z-depth-4" style="background-color:lightgray;">
+                        <div class="card-image" style="padding:10px;">
+                            <img src="/Content/img/block3.jpg" style="border-radius:10px">
+                            <span class="card-title" style="color:black">Leisure</span>
+                        </div>
+                        <div class="card-content" style="background-color:blueviolet">
+                            <ul class="collapsible z-depth-3" data-collapsible="accordion">
+                                <li>
+                                    <div class="collapsible-header" style="background-color:lightgray">
+                                        <p style="text-align:center">Leisure</p>
+                                    </div>
+                                    <div class="collapsible-body white-text purple" style="padding-left:10px">
+                                       
+                                        <h6>Daytime Fun</h6>
+                                        <ul>
+                                            <li> Lifetime experiences with adventures at the lake near by. All the safety equipment and life gurds are available.</li>
+                                            <li>- Freediving</li>
+                                            <li>- jet skiing</li>
+                                            <li>- Water skiing</li>
+                                        </ul>
+
+                                        <h6>Evenning Leisure</h6>
+                                        <ul>
+                                            <li>Starting from tasty appetizers you get to take pleasure in tantalizing main dishes and desserts, while moisturizing your lips with an outstanding Beverage Menu.</li>
+                                            <li>- Music by one of the Best Bands</li>
+                                            <li>- Play Pool, snooker or darts to your Heart's Content</li>
+                                            <li>- Or just relax and watch the live play on Giant Screen</li>
+                                        </ul>
+                                </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <a>
+                                @Html.ActionLink("Gallery", "LeisureGallery", "User")
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

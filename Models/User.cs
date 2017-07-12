@@ -41,7 +41,7 @@ namespace HotelReservationSystem.Models
         Last name
         Email
         gender
-        date of birth
+        and date of birth
 
         */
     }
